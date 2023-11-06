@@ -28,7 +28,7 @@ func TestHandlerGetHome(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	want := "To fail test\n"
+	want := "Welcome to Swath\n"
 	if string(body) != want {
 		t.Errorf("Unexpected return. want: %s \t got: %s", want, string(body))
 	}
