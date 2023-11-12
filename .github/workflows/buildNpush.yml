@@ -54,7 +54,7 @@ jobs:
 
     # authenticate docker with artifact registry
     - name: Docker login
-      uses: docker/login-action@v1
+      uses: docker/login-action@v3
       with:
         registry: northamerica-northeast2-docker.pkg.dev
         username: oauth2accesstoken
