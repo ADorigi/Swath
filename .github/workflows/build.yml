@@ -49,7 +49,7 @@ jobs:
 
     # check created image in docker local registry
     - name: Check image
-      run: docker build -t swath-test .
+      run: docker images
 
     # authenticate docker with artifact registry
     # - name: Docker login
