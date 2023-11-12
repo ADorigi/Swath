@@ -5,9 +5,13 @@ name: build
 
 on:
   push:
-    branches: [ "main" ]
+    branches: 
+        - main
+    tags:        
+        - 'v*'
   pull_request:
-    branches: [ "main" ]
+    branches: 
+        - main
 
 jobs:
 
@@ -32,3 +36,13 @@ jobs:
       with:
         workload_identity_provider: 'projects/797097160987/locations/global/workloadIdentityPools/swath-gh-idenity-pool/providers/swath-pool-provider-id'
         service_account: 'swath-service-account@agile-tangent-401105.iam.gserviceaccount.com'
+
+    - name: Docker Version
+      run: docker version
+
+# verify docker version
+# authenticate docker
+# create image
+# tag the image
+# push to registry
+# create kube config
