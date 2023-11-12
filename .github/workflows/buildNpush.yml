@@ -30,15 +30,15 @@ jobs:
     - id: 'authGCP'
       uses: 'google-github-actions/auth@v1'
       with:
-        # token_format: access_token
+        token_format: access_token
         # create_credentials_file: true
         workload_identity_provider: 'projects/797097160987/locations/global/workloadIdentityPools/swath-gh-idenity-pool/providers/swath-pool-provider-id'
         service_account: 'swath-service-account@agile-tangent-401105.iam.gserviceaccount.com'
         # access_token_lifetime: 300s
         
-    # gcloud authenticate for docker
-    - name: glcloudDocker
-      run: gcloud auth configure-docker northamerica-northeast2-docker.pkg.dev/agile-tangent-401105/container-registry
+    # # gcloud authenticate for docker
+    # - name: glcloudDocker
+    #   run: gcloud auth configure-docker northamerica-northeast2-docker.pkg.dev/agile-tangent-401105/container-registry
 
     # verify docker version
     - name: Docker Version
@@ -56,7 +56,7 @@ jobs:
     - name: Docker login
       uses: docker/login-action@v1
       with:
-        registry: us-west2-docker.pkg.dev
+        registry: northamerica-northeast2-docker.pkg.dev
         username: oauth2accesstoken
         password: ${{ steps.authGCP.outputs.access_token }}
     
