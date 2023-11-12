@@ -44,9 +44,9 @@ jobs:
     - name: Docker Version
       run: docker version
 
-    # create image with docker build
-    - name: Create image
-      run: docker build -t swath-test .
+    # # create image with docker build
+    # - name: Create image
+    #   run: docker build -t swath-test .
 
     # check created image in docker local registry
     - name: Check image
@@ -60,6 +60,16 @@ jobs:
         username: oauth2accesstoken
         password: ${{ steps.authGCP.outputs.access_token }}
     
+
+    - name: Build and push
+      uses: docker/build-push-action@v5
+      with:
+        push: true
+        tags: northamerica-northeast2-docker.pkg.dev/agile-tangent-401105/container-registry/swath-test
+
+
     # tag the image
+    # - name: Tagging docker image
+      
     # push to registry
     # create kube config
