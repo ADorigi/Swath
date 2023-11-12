@@ -5,11 +5,8 @@ name: build
 
 on:
   push:
-    branches: 
-        - main
-  pull_request:
-    branches: 
-        - main
+    tags:        
+        - 'v*'
 
 jobs:
 
@@ -32,7 +29,7 @@ jobs:
     - id: 'authGCP'
       uses: 'google-github-actions/auth@v1'
       with:
-        # token_format: access_token
+        token_format: access_token
         workload_identity_provider: 'projects/797097160987/locations/global/workloadIdentityPools/swath-gh-idenity-pool/providers/swath-pool-provider-id'
         service_account: 'swath-service-account@agile-tangent-401105.iam.gserviceaccount.com'
         # access_token_lifetime: 300s
