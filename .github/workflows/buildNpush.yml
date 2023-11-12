@@ -47,12 +47,12 @@ jobs:
       run: docker images
 
     # authenticate docker with artifact registry
-    # - name: Docker login
-    #   uses: docker/login-action@v1
-    #   with:
-    #     registry: us-west2-docker.pkg.dev
-    #     username: oauth2accesstoken
-    #     password: ${{ steps.auth.outputs.access_token }}
+    - name: Docker login
+      uses: docker/login-action@v1
+      with:
+        registry: us-west2-docker.pkg.dev
+        username: oauth2accesstoken
+        password: ${{ steps.authGCP.outputs.access_token }}
     
     # tag the image
     # push to registry
