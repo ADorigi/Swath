@@ -36,15 +36,21 @@ jobs:
         service_account: 'swath-service-account@agile-tangent-401105.iam.gserviceaccount.com'
         # access_token_lifetime: 300s
         
-    # # gcloud authenticate for docker
+    # # gcloud authenticate for docker (did not implement, used docker login action instead)
     # - name: glcloudDocker
     #   run: gcloud auth configure-docker northamerica-northeast2-docker.pkg.dev/agile-tangent-401105/container-registry
+    
+    - name: Set output to capture tag
+      id: vars
+      run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
+
 
     # verify docker version
     - name: Docker Version
       run: |
         docker version
         echo ${{ github.event_name}}
+        echo ${{ steps.vars.outputs.tag}}
 
     # # create image with docker build
     # - name: Create image
@@ -64,7 +70,7 @@ jobs:
     
 
     # - name: Build and push with tag
-    # #   if: ${{ env.GITHUB_EVENT_NAME != 'workflow_dispatch'}} 
+    #   if: ${{ env.GITHUB_EVENT_NAME != 'workflow_dispatch'}} 
     #   uses: docker/build-push-action@v5
     #   with:
     #     push: true
