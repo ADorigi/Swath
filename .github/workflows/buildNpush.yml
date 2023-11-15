@@ -6,7 +6,7 @@ name: buildNpush
 on:
   push:
     tags:        
-        - v**
+        - '[0-9]+.[0-9]+.[0-9]+'
   workflow_dispatch:
 
 jobs:
@@ -57,10 +57,10 @@ jobs:
     # - name: Create image
     #   run: docker build -t swath-test .
 
-    # check created image in docker local registry
-    - name: Check image
-      if: ${{ github.event_name != 'workflow_dispatch'}} 
-      run: docker images
+    # check created image in docker local registry( not used, used docker action instead)
+    # - name: Check image
+    #   if: ${{ github.event_name != 'workflow_dispatch'}} 
+    #   run: docker images
 
     # authenticate docker with artifact registry
     - name: Docker login
@@ -72,7 +72,7 @@ jobs:
     
 
     # - name: Build and push with tag
-    #   if: ${{ env.GITHUB_EVENT_NAME != 'workflow_dispatch'}} 
+    #   if: ${{ github.event_name != 'workflow_dispatch'}} 
     #   uses: docker/build-push-action@v5
     #   with:
     #     push: true
