@@ -40,9 +40,9 @@ jobs:
     # - name: glcloudDocker
     #   run: gcloud auth configure-docker northamerica-northeast2-docker.pkg.dev/agile-tangent-401105/container-registry
     
-    - name: Set output to capture tag
-      id: vars
-      run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
+    # - name: Set output to capture tag
+    #   id: vars
+    #   run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
 
 
     # verify docker version
@@ -50,7 +50,8 @@ jobs:
       run: |
         docker version
         echo ${{ github.event_name}}
-        echo ${{ steps.vars.outputs.tag}}
+        echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME"
+        echo "Tag name from github.ref_name: ${{  github.ref_name }}"
 
     # # create image with docker build
     # - name: Create image
