@@ -39,7 +39,9 @@ jobs:
 
     # verify docker version
     - name: Docker Version
-      run: docker version
+      run: |
+        docker version
+        echo ${{ github.event_name}}
 
     # create image with docker build
     - name: Create image
