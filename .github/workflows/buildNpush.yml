@@ -71,12 +71,12 @@ jobs:
         password: ${{ steps.authGCP.outputs.access_token }}
     
 
-    # - name: Build and push with tag
-    #   if: ${{ github.event_name != 'workflow_dispatch'}} 
-    #   uses: docker/build-push-action@v5
-    #   with:
-    #     push: true
-    #     tags: northamerica-northeast2-docker.pkg.dev/agile-tangent-401105/container-registry/swath-test
+    - name: Build and push with tag
+      if: ${{ github.event_name != 'workflow_dispatch'}} 
+      uses: docker/build-push-action@v5
+      with:
+        push: true
+        tags: northamerica-northeast2-docker.pkg.dev/agile-tangent-401105/container-registry/swath:${{  github.ref_name }}
 
 
     # tag the image
