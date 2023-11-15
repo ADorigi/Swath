@@ -59,6 +59,7 @@ jobs:
 
     # check created image in docker local registry
     - name: Check image
+      if: ${{ github.event_name != 'workflow_dispatch'}} 
       run: docker images
 
     # authenticate docker with artifact registry
