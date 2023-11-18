@@ -22,6 +22,12 @@ FROM alpine
 
 RUN apk update add ca-certificates
 
-COPY --from=builder /app/swath /swath
+COPY --from=builder /app/swath  /app/
 
-CMD [ "/swath" ]
+# RUN mkdir /app/htmx
+
+COPY htmx /app/htmx
+
+WORKDIR /app
+
+CMD [ "./swath" ]
