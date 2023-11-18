@@ -7,9 +7,9 @@ import (
 	"testing"
 )
 
-func TestHandlerGetHome(t *testing.T) {
+func TestHandlerSanity(t *testing.T) {
 	// create a test server
-	s := httptest.NewServer(http.HandlerFunc(HandlerGetHome))
+	s := httptest.NewServer(http.HandlerFunc(HandlerSanity))
 
 	// create a request to be made for this test
 	req, err := http.NewRequest(http.MethodGet, s.URL, nil)
@@ -28,7 +28,7 @@ func TestHandlerGetHome(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	want := "Welcome to Swath\n"
+	want := "Server is sane\n"
 	if string(body) != want {
 		t.Errorf("Unexpected return. want: %s \t got: %s", want, string(body))
 	}
