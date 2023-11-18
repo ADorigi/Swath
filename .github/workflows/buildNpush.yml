@@ -76,7 +76,7 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         push: true
-        tags: northamerica-northeast2-docker.pkg.dev/agile-tangent-401105/container-registry/swath:${{  github.ref_name }}
+        tags: northamerica-northeast2-docker.pkg.dev/agile-tangent-401105/container-registry/swath:latest , northamerica-northeast2-docker.pkg.dev/agile-tangent-401105/container-registry/swath:${{  github.ref_name }}
 
 
     # tag the image
