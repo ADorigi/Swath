@@ -12,19 +12,11 @@ RUN go build -o /app/swath ./
 
 
 
-# FROM scratch
-
-# COPY --from=builder /app/swath /bin/swath
-
-# CMD ["/bin/swath"]
-
 FROM alpine
 
-RUN apk update add ca-certificates
+RUN apk update add --no-cache ca-certificates
 
 COPY --from=builder /app/swath  /app/
-
-# RUN mkdir /app/htmx
 
 COPY htmx /app/htmx
 
