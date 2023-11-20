@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: swath
+  name: swath
+  namespace: swath
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: swath
+  template:
+    metadata:
+      labels:
+        app: swath
+    spec:
+      containers:
+      - image: northamerica-northeast2-docker.pkg.dev/agile-tangent-401105/container-registry/swath@sha256:ae3a7e041ab9dbeb93defb6475b5175ed4d559a1d088d39edcf31dceec583cfd 
+        name: swath
