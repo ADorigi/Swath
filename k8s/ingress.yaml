@@ -12,7 +12,8 @@ spec:
   - host: swath.gule-gulzar.com
     http:
       paths:
-      - backend:
+      - path: "/"
+        backend:
           service:
             name: swath-lb
             port:
