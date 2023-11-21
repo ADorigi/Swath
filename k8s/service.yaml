@@ -5,7 +5,11 @@ metadata:
     app: swath
   name: swath-lb
   namespace: swath
+  annotations:
+    networking.gke.io/load-balancer-type: "Internal"
 spec:
+  type: LoadBalancer
+  externalTrafficPolicy: Cluster
   selector:
     app: swath
   ports:
