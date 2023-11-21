@@ -17,3 +17,4 @@ spec:
             name: swath-lb
             port:
               number: 80
+        pathType: exact
