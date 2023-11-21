@@ -7,6 +7,7 @@ metadata:
   name: swath-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.global-static-ip-name: gke-static-ip
 spec:
   rules:
   - host: swath.gule-gulzar.com

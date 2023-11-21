@@ -8,6 +8,7 @@ metadata:
   annotations:
     networking.gke.io/load-balancer-type: "Internal"
 spec:
+  loadBalancerIP: "34.130.196.231"
   type: LoadBalancer
   externalTrafficPolicy: Cluster
   selector:
