@@ -6,13 +6,10 @@ metadata:
   name: swath-lb
   namespace: swath
 spec:
-  ports:
-  - name: 80-9009
-    port: 80
-    protocol: TCP
-    targetPort: 9009
-    nodePort: 30031
   selector:
     app: swath
-  type: LoadBalancer
-
+  ports:
+    - name: 80-9009 
+      protocol: TCP
+      port: 80
+      targetPort: 9009
