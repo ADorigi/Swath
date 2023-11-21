@@ -19,4 +19,4 @@ spec:
             name: swath-lb
             port:
               number: 80
-        pathType: Exact
+        pathType: Prefix
