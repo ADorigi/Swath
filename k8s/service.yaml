@@ -1,3 +1,28 @@
+####################### 
+# Load Balancer Service
+#######################
+# 
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   labels:
+#     app: swath
+#   name: swath-lb
+#   namespace: swath
+#   annotations:
+#     networking.gke.io/load-balancer-type: "Internal"
+# spec:
+#   loadBalancerIP: "34.130.196.231"
+#   type: LoadBalancer
+#   externalTrafficPolicy: Cluster
+#   selector:
+#     app: swath
+#   ports:
+#     - name: 80-9009 
+#       protocol: TCP
+#       port: 80
+#       targetPort: 9009
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -5,12 +30,8 @@ metadata:
     app: swath
   name: swath-lb
   namespace: swath
-  annotations:
-    networking.gke.io/load-balancer-type: "Internal"
 spec:
-  loadBalancerIP: "34.130.196.231"
-  type: LoadBalancer
-  externalTrafficPolicy: Cluster
+  type: NodePort
   selector:
     app: swath
   ports:
@@ -18,3 +39,4 @@ spec:
       protocol: TCP
       port: 80
       targetPort: 9009
+
