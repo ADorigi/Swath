@@ -8,6 +8,7 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     kubernetes.io/ingress.global-static-ip-name: "static-ip-gke"
+    networking.gke.io/managed-certificates: managed-certificate
 spec:
   rules:
   - host: swath.gule-gulzar.com
