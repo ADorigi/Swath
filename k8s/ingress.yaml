@@ -9,7 +9,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
     kubernetes.io/ingress.global-static-ip-name: "static-ip-gke"
     networking.gke.io/managed-certificates: managed-certificate
-    networking.gke.io/v1beta1.FrontendConfig: ssl-redirect
+    networking.gke.io/v1beta1.FrontendConfig: redirect-http
 spec:
   rules:
   - host: swath.gule-gulzar.com
