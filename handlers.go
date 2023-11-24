@@ -4,16 +4,21 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"os"
 )
 
 func HandlerGetHome(w http.ResponseWriter, req *http.Request) {
 
 	log.Println("Get Home Handler: Enter")
+	log.Println(os.Getenv("SWATH_VERSION"))
 	w.WriteHeader(http.StatusOK)
 
 	// w.Write([]byte("Welcome to Swath\n"))
 	tmpl := template.Must(template.ParseFiles("htmx/index.html"))
-	tmpl.Execute(w, nil)
+	data := map[string]string{
+		"Version": os.Getenv("SWATH_VERSION"),
+	}
+	tmpl.Execute(w, data)
 
 	log.Println("Get Home Handler: Exiting")
 

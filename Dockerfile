@@ -22,4 +22,8 @@ COPY htmx /app/htmx
 
 WORKDIR /app
 
+ARG version 
+
+ENV SWATH_VERSION $version
+
 CMD [ "./swath" ]

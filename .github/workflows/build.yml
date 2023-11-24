@@ -45,7 +45,7 @@ jobs:
 
     # create image with docker build
     - name: Create image
-      run: docker build -t swath-test .
+      run: docker build -t swath-test --build-arg version=test .
 
     # check created image in docker local registry
     - name: Check image
