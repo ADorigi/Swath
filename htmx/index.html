@@ -18,66 +18,14 @@
             padding: 60px 0;
         }
     </style>
-    <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.9"
+        integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX"
+        crossorigin="anonymous"></script>
 
 </head>
 
 <body>
-    <!-- <div class="container text-center text-warning h-25 d-flex align-items-center justify-content-center">
-
-        <div class="row">
-            <div class="col-1">
-            </div>
-            <div class="col-10">
-                <h1>Swath says Hello</h1>
-            </div>
-            <div class="col-1">
-            </div>
-        </div>
-    </div>
-    <div class="container text-center h-100 d-flex align-items-center justify-content-center">
-
-        <div class="row">
-            <div class="col-1">
-            </div>
-            <div class="col-10">
-                <a href="https://github.com/adorigi/swath" class="btn btn-lg  btn-outline-warning">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                        class="bi bi-github" viewBox="0 0 18 18">
-                        <path
-                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8">
-                        </path>
-                    </svg>
-                    Swath
-                </a>
-            </div>
-            <div class="col-1">
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-1">
-            </div>
-            <div class="col-10">
-                <a href="https://github.com/adorigi/patroller" class="btn btn-lg  btn-outline-warning">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                        class="bi bi-github" viewBox="0 0 18 18">
-                        <path
-                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8">
-                        </path>
-                    </svg>
-                    Patroller
-                </a>
-            </div>
-            <div class="col-1">
-            </div>
-        </div>
-    </div> -->
-
-
-
-
-
+    
     <!-- Landing Page -->
     <section id="Landing">
         <div class="container-lg">
@@ -100,21 +48,37 @@
                 <div class="col-8 col-lg-5 col-xl-5">
                     <div class="card border-dark">
                         <div class="card-body text-center py-5">
-                            <!-- <h4 class="card-title text-warning text-lg">
-                                Past Swath
-                            </h4> -->
+                            
 
                             <div class="container py-2">
-                                <button hx-get="/aboutSwath" hx-target="#content" class="btn btn-lg btn-outline-warning">
+                                <button hx-get="/aboutswath" hx-target="#content" hx-indicator="#spinner"
+                                    class="btn btn-lg btn-outline-warning">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                                        class="bi bi-info-circle-fill" viewBox="0 0 18 18">
+                                        <path
+                                            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2" />
+                                    </svg>
                                     About Swath
                                 </button>
                             </div>
 
                             <div class="container py-2">
+                                <button hx-get="/sanityhtmx" hx-target="#content"
+                                    class="btn btn-lg btn-outline-warning">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                                        class="bi bi-check-circle-fill" viewBox="0 0 18 18">
+                                        <path
+                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                    </svg>
+                                    Check Swath
+                                </button>
+                            </div>
+
+                            <!-- <div class="container py-2">
                                 <button hx-get="/getlinks" hx-target="#content" class="btn btn-lg btn-outline-warning">
                                     Get links to Past Swath
                                 </button>
-                            </div>
+                            </div> -->
 
 
                         </div>
@@ -122,26 +86,18 @@
                 </div>
                 <div class="col-8 col-lg-5 col-xl-5">
                     <div class="card">
-                        <!-- <div class="card-header text-center">
-                            <h4 class="text-warning">Content</h4>
-                        </div> -->
+                        
                         <div class="card-body text-center py-5">
-                            
-                            
-                            <div id="content" class="container" >
 
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae, dolores!</p>
-                                <!-- <ul class="list-group">
-                                    <div class="btn-group-vertical">
-                                        <a href="https://swath.gule-gulzar.com" class="btn btn-outline-warning">
-                                           Latest
-                                        </a>
-                                        <a href="https://swath.gule-gulzar.com" class="btn btn-outline-warning">
-                                            Latest
-                                         </a>
-                                    </div> 
-                                    <li class="list-group-item">Vestibulum at eros</li> 
-                                </ul> -->
+
+                            <div id="content" class="container">
+
+                                <div id="spinner" class="d-flex justify-content-center htmx-indicator">
+                                    <div class="spinner-border text-warning" role="status">
+                                        <span class="sr-only"></span>
+                                    </div>
+                                </div>
+
 
                             </div>
 
@@ -152,6 +108,53 @@
 
             </div>
 
+        </div>
+    </section>
+    <section>
+        <div class="container justify-content-center align-items-center">
+            <div class="text-center">
+                <p class="text-white-50 ">If you are considering recruiting me, you might be interested in swath's source code</p>
+                <p class="text-warning">Don't underestimate SWATH: there is a lot under the hood</p>
+            </div>
+        </div>
+        <div class="container text-center h-100 d-flex align-items-center justify-content-center">
+
+
+            <div class="row">
+                <div class="col-1">
+                </div>
+                <div class="col-10">
+                    <a href="https://github.com/adorigi/swath" class="btn btn-lg  btn-outline-warning">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-github" viewBox="0 0 18 18">
+                            <path
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8">
+                            </path>
+                        </svg>
+                        Swath
+                    </a>
+                </div>
+                <div class="col-1">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1">
+                </div>
+                <div class="col-10">
+                    <a href="https://github.com/adorigi/patroller" class="btn btn-lg  btn-outline-warning">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-github" viewBox="0 0 18 18">
+                            <path
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8">
+                            </path>
+                        </svg>
+                        Patroller
+                    </a>
+                </div>
+                <div class="col-1">
+                </div>
+            </div>
         </div>
     </section>
 

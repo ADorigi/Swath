@@ -12,7 +12,9 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", HandlerGetHome).Methods("GET")
 	r.HandleFunc("/sanity", HandlerSanity).Methods("GET")
-	r.HandleFunc("/getlinks", HandlerGetLinks).Methods("GET")
+	r.HandleFunc("/sanityhtmx", HandlerSanityHTMX).Methods("GET")
+	r.HandleFunc("/aboutswath", HandlerAboutSwath).Methods("GET")
+	// r.HandleFunc("/getlinks", HandlerGetLinks).Methods("GET")
 
 	log.Println("Starting to listen on port 9009")
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./htmx/static/"))) //to server the contents of static folder in htmx
